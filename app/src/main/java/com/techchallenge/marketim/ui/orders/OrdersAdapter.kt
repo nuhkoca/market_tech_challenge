@@ -8,6 +8,8 @@ import com.techchallenge.core.util.delegate.AdapterItem
 import com.techchallenge.core.util.delegate.DelegateAdapter
 import com.techchallenge.core.util.ext.bind
 import com.techchallenge.core.util.ext.getDrawableCompat
+import com.techchallenge.core.util.ext.isVisible
+import com.techchallenge.core.util.ext.rotate
 import com.techchallenge.core.util.ext.toMonthName
 import com.techchallenge.core.util.ext.use
 import com.techchallenge.core.util.ext.withCurrency
@@ -32,6 +34,7 @@ class OrdersAdapter : DelegateAdapter {
     inner class OrderViewHolder(itemView: View) :
         BaseViewHolder<ViewOrdersLayoutBinding, AdapterItem>(itemView) {
         override fun bindTo(item: AdapterItem) {
+            var up = false
             item as ResponseViewItem
             with(item) {
                 dataBinding?.use {
@@ -42,8 +45,28 @@ class OrdersAdapter : DelegateAdapter {
                     tvPrice.text = productPrice.withCurrency()
                     tvStatusText.text = productState.type
                     ivStatus.setImageDrawable(ivStatus.context.getDrawableCompat(productState.color))
+                    tvDetail.text = productDetailRawViewItem.orderDetail
+                    tvDetailPrice.text = productDetailRawViewItem.summaryPrice.withCurrency()
+
+                    ivExpandCollapseArrow.setOnClickListener {
+                        it.rotate(if (up.not()) DEGREE_90 else DEGREE_180) {
+                            up = up.not()
+                            layoutDetail.isVisible = up
+                        }
+                    }
+                    orderLayout.setOnClickListener {
+                        ivExpandCollapseArrow.rotate(if (up.not()) DEGREE_90 else DEGREE_180) {
+                            up = up.not()
+                            layoutDetail.isVisible = up
+                        }
+                    }
                 }
             }
         }
+    }
+
+    companion object {
+        private const val DEGREE_90 = 90f
+        private const val DEGREE_180 = 180f
     }
 }
