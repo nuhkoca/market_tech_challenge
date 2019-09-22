@@ -42,6 +42,9 @@ object Dependencies {
 
     // Timber
     const val timber_kt = "com.github.ajalt:timberkt:${Versions.timberkt}"
+
+    // ABP
+    const val abp = "com.jakewharton.threetenabp:threetenabp:${Versions.abp}"
 }
 
 object TestDependencies {

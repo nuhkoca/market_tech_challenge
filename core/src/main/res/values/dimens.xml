@@ -15,4 +15,9 @@
   <dimen name="login_button_height">56dp</dimen>
 
   <dimen name="splash_brand_name_text_size">26sp</dimen>
+
+  <dimen name="orders_footer_height">65dp</dimen>
+
+  <item name="text_line_spacing" format="float" type="dimen">1.2</item>
+
 </resources>

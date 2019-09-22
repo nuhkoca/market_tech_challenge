@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Widget.Marketim.TextView" parent="@android:style/Widget.Material.TextView">
+    <item name="android:textAppearance">@style/TextAppearance.Marketim.Body</item>
+    <item name="android:lineSpacingMultiplier">@dimen/text_line_spacing</item>
+  </style>
+</resources>

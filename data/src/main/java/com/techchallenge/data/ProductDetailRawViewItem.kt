@@ -7,5 +7,5 @@ data class ProductDetailRawViewItem(
     @SerializedName("orderDetail")
     val orderDetail: String,
     @SerializedName("summaryPrice")
-    val summaryPrice: Float
+    val summaryPrice: String
 )

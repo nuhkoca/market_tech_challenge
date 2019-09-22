@@ -3,9 +3,9 @@ package com.techchallenge.core
 import android.content.Context
 import android.os.Bundle
 import androidx.annotation.LayoutRes
-import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.techchallenge.core.dialog.ProgressDialogFragment
 import com.techchallenge.core.util.keyboard.FluidContentResizer
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.disposables.CompositeDisposable
@@ -45,4 +45,22 @@ abstract class BaseActivity<VM : ViewModel> : DaggerAppCompatActivity(), BaseVie
     abstract override fun initView()
 
     abstract override fun observeViewModel()
+
+    fun showDialog() {
+        if (supportFragmentManager.findFragmentByTag(ProgressDialogFragment.TAG) != null) {
+            return
+        }
+
+        val dialogFragment = ProgressDialogFragment()
+        dialogFragment.show(supportFragmentManager, ProgressDialogFragment.TAG)
+    }
+
+    fun hideDialog() {
+        val fragment =
+            supportFragmentManager.findFragmentByTag(ProgressDialogFragment.TAG) ?: return
+
+        supportFragmentManager.beginTransaction()
+            .remove(fragment)
+            .commitAllowingStateLoss()
+    }
 }

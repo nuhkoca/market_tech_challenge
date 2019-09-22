@@ -1,104 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     >
-
-  <ImageView
-      android:id="@+id/expandCollapseArrow"
-      android:layout_width="wrap_content"
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:contentDescription="@null"
-      android:src="@drawable/ic_arrow_right"
-      app:layout_constraintBottom_toBottomOf="@+id/marketName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/marketName"
-      />
+      android:paddingBottom="@dimen/spacing_big"
+      >
 
-  <TextView
-      android:id="@+id/dateMonth"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingEnd="@dimen/spacing_small"
-      android:paddingStart="@dimen/spacing_small"
-      android:textSize="@dimen/font_normal"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="@id/dateDay"
-      app:layout_constraintStart_toStartOf="@id/dateDay"
-      app:layout_constraintTop_toBottomOf="@+id/dateDay"
-      tools:text="Ekim"
-      />
+    <ImageView
+        android:id="@+id/ivExpandCollapseArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@null"
+        android:focusable="true"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMarketName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMarketName"
+        />
 
-  <TextView
-      android:id="@+id/dateDay"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingEnd="@dimen/spacing_small"
-      android:paddingStart="@dimen/spacing_small"
-      android:textSize="@dimen/font_huge"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:text="08"
-      />
+    <ImageView
+        android:id="@+id/ivStatus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="@drawable/rectange_waiting_for_approval"
+        android:contentDescription="@null"
+        app:layout_constraintStart_toEndOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderName"
+        app:layout_constraintTop_toTopOf="@id/barrier"
+        />
 
-  <TextView
-      android:id="@+id/marketName"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/spacing_normal"
-      android:paddingEnd="@dimen/spacing_small"
-      android:paddingStart="@dimen/spacing_small"
-      android:textSize="@dimen/font_normal"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toStartOf="@+id/expandCollapseArrow"
-      app:layout_constraintStart_toEndOf="@id/separator"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:text="Market Name 1"
-      />
+    <TextView
+        android:id="@+id/tvStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:textSize="@dimen/font_normal"
+        app:layout_constraintBottom_toBottomOf="@+id/ivStatus"
+        app:layout_constraintStart_toEndOf="@+id/ivStatus"
+        app:layout_constraintTop_toTopOf="@+id/ivStatus"
+        tools:text="Onay Bekliyor"
+        />
 
-  <TextView
-      android:id="@+id/orderName"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/spacing_tiny"
-      android:ellipsize="end"
-      android:maxLines="1"
-      android:paddingEnd="@dimen/spacing_small"
-      android:paddingStart="@dimen/spacing_small"
-      app:layout_constraintEnd_toStartOf="@id/price"
-      app:layout_constraintStart_toStartOf="@id/marketName"
-      app:layout_constraintBottom_toBottomOf="@id/price"
-      app:layout_constraintTop_toBottomOf="@id/marketName"
-      tools:text="Şampuan 250 ml"
-      />
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/spacing_small"
+        android:paddingStart="@dimen/spacing_small"
+        android:textSize="@dimen/font_huge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="08"
+        />
 
-  <TextView
-      android:id="@+id/price"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/spacing_normal"
-      android:paddingEnd="@dimen/spacing_small"
-      android:paddingStart="@dimen/spacing_small"
-      android:textSize="@dimen/font_normal"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@id/orderName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/orderName"
-      tools:text="25 TL"
-      />
+    <TextView
+        android:id="@+id/tvMarketName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:paddingEnd="@dimen/spacing_small"
+        android:paddingStart="@dimen/spacing_small"
+        android:textSize="@dimen/font_normal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+        app:layout_constraintStart_toEndOf="@id/separator"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Market Name 1"
+        />
 
-  <View
-      android:id="@+id/separator"
-      android:layout_width="1dp"
-      android:layout_height="0dp"
-      android:layout_marginTop="@dimen/spacing_normal"
-      android:background="@color/orders_separator_color"
-      app:layout_constraintBottom_toBottomOf="@+id/dateMonth"
-      app:layout_constraintStart_toEndOf="@id/dateDay"
-      app:layout_constraintTop_toTopOf="@id/dateDay"
-      />
+    <TextView
+        android:id="@+id/tvOrderName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/spacing_small"
+        android:paddingStart="@dimen/spacing_small"
+        android:textSize="@dimen/font_normal"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/tvMarketName"
+        tools:text="Şampuan 250 ml"
+        />
 
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:textSize="@dimen/font_normal"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivExpandCollapseArrow"
+        tools:text="25 TL"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/spacing_small"
+        android:paddingStart="@dimen/spacing_small"
+        android:textSize="@dimen/font_normal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tvDate"
+        app:layout_constraintStart_toStartOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        tools:text="Ekim"
+        />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="@color/orders_separator_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMonth"
+        app:layout_constraintStart_toEndOf="@id/tvDate"
+        app:layout_constraintTop_toTopOf="@id/tvDate"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvOrderName,tvPrice"
+        />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

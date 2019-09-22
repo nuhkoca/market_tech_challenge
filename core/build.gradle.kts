@@ -118,14 +118,18 @@ dependencies {
     implementation(Dependencies.kotlin)
     implementation(Dependencies.core_ktx)
     implementation(Dependencies.material)
+    implementation(Dependencies.constraint_layout)
 
     implementation(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)
+    kapt(Dependencies.dagger_android_processor)
     compileOnly(Dependencies.javax_annotation)
 
     implementation(Dependencies.rx_java)
     implementation(Dependencies.rx_android)
     implementation(Dependencies.rx_binding)
+
+    implementation(Dependencies.abp)
 
     debugImplementation(Dependencies.leakcanary)
     implementation(Dependencies.timber_kt)

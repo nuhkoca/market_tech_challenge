@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">core</string>
+
+  <string name="text_login">Giriş Yapılıyor</string>
 </resources>

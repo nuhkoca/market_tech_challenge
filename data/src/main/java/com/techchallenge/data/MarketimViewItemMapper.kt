@@ -9,7 +9,7 @@ class MarketimViewItemMapper @Inject constructor() : Mapper<Response, ResponseVi
     override fun invoke(input: Response) = with(input) {
         val productDetailViewItem = ProductDetailRawViewItem(
             productDetail?.orderDetail.toString(),
-            productDetail?.summaryPrice ?: 0.0f
+            productDetail?.summaryPrice.toString()
         )
 
         ResponseViewItem(
@@ -17,7 +17,7 @@ class MarketimViewItemMapper @Inject constructor() : Mapper<Response, ResponseVi
             month.toString(),
             marketName.toString(),
             orderName.toString(),
-            productPrice ?: 0.0f,
+            productPrice.toString(),
             productState ?: INVALID,
             productDetailViewItem
         )

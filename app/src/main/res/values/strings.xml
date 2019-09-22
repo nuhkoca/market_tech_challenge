@@ -10,4 +10,8 @@
   <string name="login_alert_dialog_title">Hata</string>
   <string name="login_alert_dialog_message">Kullanıcı adı veya şifreniz yanlış.</string>
   <string name="login_alert_dialog_positive_button_text">Tamam</string>
+
+  <!-- Orders texts -->
+  <string name="orders_text">Siparişlerim</string>
+  <string name="orders_logout_text">Çıkış Yap</string>
 </resources>

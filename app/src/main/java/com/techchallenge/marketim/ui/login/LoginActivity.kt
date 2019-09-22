@@ -25,6 +25,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
 
         btnLogin.setOnClickListener {
             hideKeyBoard()
+            showDialog()
 
             val usernameDisposable = tietUsername.observeTextChanges()
             val passwordDisposable = tietPwd.observeTextChanges()
@@ -38,6 +39,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
 
     override fun observeViewModel() = with(viewModel) {
         formValidationLiveData.observeWith(this@LoginActivity) { validationStatus ->
+            hideDialog()
             if (validationStatus) {
                 launchActivity<OrdersActivity>()
             } else {
