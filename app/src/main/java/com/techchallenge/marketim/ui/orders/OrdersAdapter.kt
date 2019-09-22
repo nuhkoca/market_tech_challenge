@@ -7,8 +7,10 @@ import com.techchallenge.core.BaseViewHolder
 import com.techchallenge.core.util.delegate.AdapterItem
 import com.techchallenge.core.util.delegate.DelegateAdapter
 import com.techchallenge.core.util.ext.bind
+import com.techchallenge.core.util.ext.getDrawableCompat
 import com.techchallenge.core.util.ext.toMonthName
 import com.techchallenge.core.util.ext.use
+import com.techchallenge.core.util.ext.withCurrency
 import com.techchallenge.data.ResponseViewItem
 import com.techchallenge.marketim.R
 import com.techchallenge.marketim.databinding.ViewOrdersLayoutBinding
@@ -37,7 +39,9 @@ class OrdersAdapter : DelegateAdapter {
                     tvMonth.text = month.toMonthName()
                     tvMarketName.text = marketName
                     tvOrderName.text = orderName
-                    tvPrice.text = productPrice
+                    tvPrice.text = productPrice.withCurrency()
+                    tvStatusText.text = productState.type
+                    ivStatus.setImageDrawable(ivStatus.context.getDrawableCompat(productState.color))
                 }
             }
         }

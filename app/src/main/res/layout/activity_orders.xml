@@ -65,9 +65,17 @@
       app:layout_constraintBottom_toTopOf="@id/ordersFooter"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/toolbarOrders"
       tools:itemCount="5"
       tools:listitem="@layout/view_orders_layout"
+      />
+
+  <include
+      android:id="@+id/toolbarOrders"
+      layout="@layout/toolbar_default"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
       />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

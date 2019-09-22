@@ -7,3 +7,5 @@ import java.util.Locale
 fun String.toMonthName(): String {
     return Month.of(this.toInt()).getDisplayName(FULL_STANDALONE, Locale("tr", "TR", "tr"))
 }
+
+fun String.withCurrency() = "$this TL"
