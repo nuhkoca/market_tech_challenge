@@ -3,6 +3,7 @@ package com.techchallenge.marketim.ui.orders
 import com.techchallenge.core.BaseActivity
 import com.techchallenge.core.util.delegate.ItemAdapter
 import com.techchallenge.core.util.ext.init
+import com.techchallenge.core.util.ext.isVisible
 import com.techchallenge.core.util.ext.launchActivity
 import com.techchallenge.core.util.ext.observeWith
 import com.techchallenge.core.util.ext.showAlert
@@ -10,6 +11,7 @@ import com.techchallenge.marketim.R
 import com.techchallenge.marketim.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_orders.btnLogout
 import kotlinx.android.synthetic.main.activity_orders.btnOrders
+import kotlinx.android.synthetic.main.activity_orders.pbOrders
 import kotlinx.android.synthetic.main.activity_orders.rvOrders
 import javax.inject.Inject
 
@@ -56,6 +58,10 @@ class OrdersActivity : BaseActivity<OrdersViewModel>() {
         logoutLiveData.observeWith(this@OrdersActivity) {
             hideDialog()
             launchActivity<LoginActivity>()
+        }
+        onProgress.observeWith(this@OrdersActivity) {
+            pbOrders.isVisible = it
+            rvOrders.isVisible = it.not()
         }
     }
 }

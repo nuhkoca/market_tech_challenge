@@ -8,7 +8,7 @@
   <a href="https://www.kariyer.net"><img alt="License" src="https://aday-asset.mncdn.com/img/kariyernet_logo.png" width="350"/></a>
 </p>
 
-[![CircleCI](https://circleci.com/gh/nuhkoca/market_tech_challenge/tree/master.svg?style=svg&circle-token=05700df6be888cf5df6833e16beb607127c1b7d5)](https://circleci.com/gh/nuhkoca/market_tech_challenge/tree/master)
+[![CircleCI](https://circleci.com/gh/nuhkoca/market_tech_challenge.svg?style=svg&circle-token=05700df6be888cf5df6833e16beb607127c1b7d5)](https://circleci.com/gh/nuhkoca/market_tech_challenge)
 [![Kotlin Version](https://img.shields.io/badge/kotlin-1.3.41-blue.svg)](https://kotlinlang.org)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 

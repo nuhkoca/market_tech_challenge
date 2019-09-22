@@ -7,6 +7,21 @@
     tools:context=".ui.orders.OrdersActivity"
     >
 
+  <ProgressBar
+      android:id="@+id/pbOrders"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:indeterminate="true"
+      android:indeterminateTint="@color/colorAccent"
+      app:backgroundTint="@color/colorAccent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:targetApi="lollipop"
+      style="@style/Widget.AppCompat.ProgressBar"
+      />
+
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/ordersFooter"
       android:layout_width="match_parent"
@@ -61,6 +76,7 @@
       android:layout_height="0dp"
       android:clipChildren="false"
       android:orientation="vertical"
+      android:visibility="gone"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
       app:layout_constraintBottom_toTopOf="@id/ordersFooter"
       app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +84,12 @@
       app:layout_constraintTop_toBottomOf="@id/toolbarOrders"
       tools:itemCount="5"
       tools:listitem="@layout/view_orders_layout"
+      tools:visibility="visible"
       />
 
   <include
-      android:id="@+id/toolbarOrders"
       layout="@layout/toolbar_default"
+      android:id="@+id/toolbarOrders"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"

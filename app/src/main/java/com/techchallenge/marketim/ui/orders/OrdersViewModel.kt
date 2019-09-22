@@ -9,6 +9,7 @@ import com.techchallenge.core.local.BooleanPreference
 import com.techchallenge.core.local.LocalStorageModule
 import com.techchallenge.core.util.executors.Executors
 import com.techchallenge.core.util.ext.applySchedulers
+import com.techchallenge.core.util.ext.progressify
 import com.techchallenge.data.ResponseViewItem
 import com.techchallenge.domain.GetOrdersUseCase
 import com.techchallenge.marketim.vm.ActionLiveData
@@ -35,6 +36,7 @@ class OrdersViewModel @Inject constructor(
     fun getOrders() {
         getOrdersUseCase.execute(None())
             .applySchedulers(executors)
+            .progressify(this)
             .subscribe(_ordersLiveData::setValue) {
                 w { it.printStackTrace().toString() }
             }
