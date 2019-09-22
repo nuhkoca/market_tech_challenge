@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">Marketim</string>
+
+  <!-- Login texts -->
+  <string name="login_title">Marketİm</string>
+  <string name="switch_remember_me">Beni Hatırla</string>
+  <string name="button_login_text">Giriş</string>
+  <string name="login_password_text">Şifre</string>
+  <string name="login_username_text">Kullanıcı Adı</string>
+  <string name="login_alert_dialog_title">Hata</string>
+  <string name="login_alert_dialog_message">Kullanıcı adı veya şifreniz yanlış.</string>
+  <string name="login_alert_dialog_positive_button_text">Tamam</string>
+</resources>

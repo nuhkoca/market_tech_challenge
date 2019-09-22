@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="preparing_red">#ED2939</color>
+  <color name="preparing_orange">#FF8D02</color>
+  <color name="preparing_green">#4DAE50</color>
+  <color name="preparing_invalid">#E9E9E9</color>
+</resources>
