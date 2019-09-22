@@ -6,24 +6,23 @@ import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.techchallenge.core.R
 
 fun Activity.showAlert(
     title: String? = "",
     message: String? = "",
-    positiveButtonText: String? = "",
-    negativeButtonText: String? = "",
-    positiveButton: () -> Unit? = {},
-    negativeButton: () -> Unit? = {}
+    positiveButton: Pair<String, () -> Unit>? = null,
+    negativeButton: Pair<String, () -> Unit>? = null
 ) {
-    AlertDialog.Builder(this).apply {
+    AlertDialog.Builder(this, R.style.Marketim_AlertDialog).apply {
         title?.let(::setTitle)
         message?.let(::setMessage)
-        setPositiveButton(positiveButtonText) { dialog, _ ->
-            positiveButton.invoke()
+        setPositiveButton(positiveButton?.first) { dialog, _ ->
+            positiveButton?.second?.invoke()
             dialog.dismiss()
         }
-        setNegativeButton(negativeButtonText) { dialog, _ ->
-            negativeButton.invoke()
+        setNegativeButton(negativeButton?.first) { dialog, _ ->
+            negativeButton?.second?.invoke()
             dialog.dismiss()
         }
     }.show()

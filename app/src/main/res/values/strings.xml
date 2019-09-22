@@ -14,4 +14,8 @@
   <!-- Orders texts -->
   <string name="orders_text">Siparişlerim</string>
   <string name="orders_logout_text">Çıkış Yap</string>
+  <string name="orders_logout_title">Çıkış</string>
+  <string name="orders_logout_message">Çıkış yapmak istiyor musunuz?</string>
+  <string name="orders_logout_positive_button">İstİyorum</string>
+  <string name="orders_logout_negative_button">İstemİyorum</string>
 </resources>

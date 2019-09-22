@@ -46,7 +46,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
                 showAlert(
                     title = getString(R.string.login_alert_dialog_title),
                     message = getString(R.string.login_alert_dialog_message),
-                    positiveButtonText = getString(R.string.login_alert_dialog_positive_button_text)
+                    positiveButton = Pair(getString(R.string.login_alert_dialog_positive_button_text), {})
                 )
             }
         }

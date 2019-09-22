@@ -12,7 +12,10 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityBuilder {
 
-    @ContributesAndroidInjector(modules = [OrdersModule::class, TagModule::class])
+    @ContributesAndroidInjector(
+        modules = [
+            OrdersModule::class, TagModule::class, ProgressDialogModule::class]
+    )
     @ActivityScope
     abstract fun provideOrdersActivity(): OrdersActivity
 

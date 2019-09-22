@@ -26,5 +26,11 @@
     <item name="android:gravity">start</item>
   </style>
 
+  <style name="Marketim.AlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
 
 </resources>
