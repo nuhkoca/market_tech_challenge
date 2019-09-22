@@ -5,7 +5,7 @@ import org.threeten.bp.format.TextStyle.FULL_STANDALONE
 import java.util.Locale
 
 fun String.toMonthName(): String {
-    return Month.of(this.toInt()).getDisplayName(FULL_STANDALONE, Locale("tr", "TR", "tr"))
+    return Month.of(this.toInt()).getDisplayName(FULL_STANDALONE, Locale.getDefault())
 }
 
 fun String.withCurrency() = "$this TL"

@@ -123,7 +123,6 @@ dependencies {
     implementation(Dependencies.lifecycle_extensions)
     implementation(Dependencies.lifecycle_runtime)
     implementation(Dependencies.lifecycle_viewmodel)
-    implementation(Dependencies.lifecycle_viewmodel_ktx)
     kapt(Dependencies.lifecycle_compiler)
 
     implementation(Dependencies.dagger)
