@@ -45,7 +45,7 @@
 ### Technology Stack
 * [Kotlin](https://kotlinlang.org/)
 * [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
-* [Mapbox](https://www.mapbox.com/)
+* [DataBinding](https://developer.android.com/topic/libraries/data-binding)
 * [Dagger 2](https://github.com/google/dagger)
 * [RxJava](https://github.com/ReactiveX/RxJava)
 * [Retrofit 2](https://square.github.io/retrofit/)
@@ -54,8 +54,14 @@
   * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
   * [ConstraintLayout](https://developer.android.com/training/constraint-layout)
 * [Mockito](https://site.mockito.org/)
-* [EasyPermissions](https://github.com/googlesamples/easypermissions)
-* [Lottie](https://github.com/airbnb/lottie-android)
+* [Detekt](https://github.com/arturbosch/detekt)
+* [Ktlint](https://github.com/JLLeitschuh/ktlint-gradle)
+
+### Layers
+* Data(This layer is responsible to hold models)
+* Domain(Retrieves data from data layer and dispatches to view layer. No connection with Android framework.)
+* Base(Contains common stuff for other layers)
+* View(Responsible for UI stuff such as displaying data)
 
 ### License
 
