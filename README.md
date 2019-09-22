@@ -63,10 +63,6 @@
 
 Icons made by Freepik from [Flaticon](https://www.flaticon.com/) is licensed by CC 3.0 BY
 
-**Some gifs in the app based on:**
-
-Gifs made by Lottie Files [Lottie Files](https://www.lottiefiles.com/) from is licensed by CC 3.0 BY
-
 ```
 MIT License
 
