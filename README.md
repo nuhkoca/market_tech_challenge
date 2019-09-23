@@ -2,10 +2,10 @@
 
 <p align="center"><img src="https://github.com/nuhkoca/market_tech_challenge/blob/master/app/src/main/ic_launcher-web.png" alt="Marketim" height="200px"></p>
 
-:boom: ***Marketim*** is a order tracking app that users can view them by logging in. API is provided by [Kariyer.net](https://www.kariyer.net).
+:boom: ***Marketim*** is a order tracking app that users can view them by logging in. API structure is provided by [Kariyer.net](https://www.kariyer.net).
 
 <p align="center">
-  <a href="https://www.kariyer.net"><img alt="License" src="https://aday-asset.mncdn.com/img/kariyernet_logo.png" width="350"/></a>
+  <a href="https://www.kariyer.net"><img alt="License" src="https://www.cemreshipyard.com/assets/img/career/kariyernet.png" width="350"/></a>
 </p>
 
 [![CircleCI](https://circleci.com/gh/nuhkoca/market_tech_challenge.svg?style=svg&circle-token=05700df6be888cf5df6833e16beb607127c1b7d5)](https://circleci.com/gh/nuhkoca/market_tech_challenge)
