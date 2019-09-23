@@ -1,15 +1,18 @@
 package com.techchallenge.data
 
 import com.techchallenge.core.util.mapper.Mapper
+import com.techchallenge.core.util.price.PriceFormatter
 import com.techchallenge.data.ProductState.INVALID
 import javax.inject.Inject
 
-class MarketimViewItemMapper @Inject constructor() : Mapper<Response, ResponseViewItem> {
+class MarketimViewItemMapper @Inject constructor(
+    private val priceFormatter: PriceFormatter
+) : Mapper<Response, ResponseViewItem> {
 
     override fun invoke(input: Response) = with(input) {
         val productDetailViewItem = ProductDetailRawViewItem(
             productDetail?.orderDetail.toString(),
-            productDetail?.summaryPrice.toString()
+            priceFormatter.format(productDetail?.summaryPrice)
         )
 
         ResponseViewItem(
@@ -17,7 +20,7 @@ class MarketimViewItemMapper @Inject constructor() : Mapper<Response, ResponseVi
             month.toString(),
             marketName.toString(),
             orderName.toString(),
-            productPrice.toString(),
+            priceFormatter.format(productPrice),
             productState ?: INVALID,
             productDetailViewItem
         )

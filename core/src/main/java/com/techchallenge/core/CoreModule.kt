@@ -6,6 +6,8 @@ import com.techchallenge.core.util.executors.MarketimComputationThread
 import com.techchallenge.core.util.executors.MarketimExecutionThread
 import com.techchallenge.core.util.executors.MarketimPostExecutionThread
 import com.techchallenge.core.util.executors.PostExecutionThread
+import com.techchallenge.core.util.price.MarketPriceFormatter
+import com.techchallenge.core.util.price.PriceFormatter
 import com.techchallenge.core.util.validator.PasswordValidator
 import com.techchallenge.core.util.validator.UsernameValidator
 import com.techchallenge.core.util.validator.Validator
@@ -32,12 +34,18 @@ abstract class CoreModule {
     @Binds
     @Singleton
     @Named(USERNAME)
-    internal abstract fun provideUsernameValidator(usernameValidator: UsernameValidator): Validator<String>
+    internal abstract fun provideUsernameValidator(usernameValidator: UsernameValidator):
+            Validator<String>
 
     @Binds
     @Singleton
     @Named(PASSWORD)
-    internal abstract fun providePasswordValidator(passwordValidator: PasswordValidator): Validator<String>
+    internal abstract fun providePasswordValidator(passwordValidator: PasswordValidator):
+            Validator<String>
+
+    @Binds
+    @Singleton
+    abstract fun providePriceFormatter(marketPriceFormatter: MarketPriceFormatter): PriceFormatter
 
     companion object {
         const val USERNAME = "UsernameValidator"

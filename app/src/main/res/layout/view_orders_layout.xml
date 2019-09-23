@@ -55,7 +55,7 @@
 
     <TextView
         android:id="@+id/tvDate"
-        android:layout_width="100dp"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/google_sans"
         android:gravity="center"

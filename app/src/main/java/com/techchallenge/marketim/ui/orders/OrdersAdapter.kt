@@ -12,7 +12,6 @@ import com.techchallenge.core.util.ext.rotate
 import com.techchallenge.core.util.ext.setDrawable
 import com.techchallenge.core.util.ext.toMonthName
 import com.techchallenge.core.util.ext.use
-import com.techchallenge.core.util.ext.withCurrency
 import com.techchallenge.data.ResponseViewItem
 import com.techchallenge.marketim.R
 import com.techchallenge.marketim.databinding.ViewOrdersLayoutBinding
@@ -41,11 +40,11 @@ class OrdersAdapter : DelegateAdapter {
                     tvMonth.text = month.toMonthName()
                     tvMarketName.text = marketName
                     tvOrderName.text = orderName
-                    tvPrice.text = productPrice.withCurrency()
+                    tvPrice.text = productPrice
                     tvStatusText.text = productState.type
                     ivStatus.setDrawable(productState.color)
                     tvDetail.text = productDetailRawViewItem.orderDetail
-                    tvDetailPrice.text = productDetailRawViewItem.summaryPrice.withCurrency()
+                    tvDetailPrice.text = productDetailRawViewItem.summaryPrice
 
                     ivExpandCollapseArrow.setOnClickListener {
                         setIsExpanded(getIsExpanded().not())
