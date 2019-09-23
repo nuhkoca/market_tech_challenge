@@ -5,5 +5,5 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import io.reactivex.Observable
 
 fun TextInputEditText.observeTextChanges(): Observable<String> {
-    return textChanges().map { it.toString() }
+    return textChanges().distinctUntilChanged().map { it.toString() }
 }
