@@ -17,6 +17,6 @@
 
   <dimen name="orders_footer_height">65dp</dimen>
 
-  <item name="text_line_spacing" format="float" type="dimen">1.2</item>
+  <item format="float" name="text_line_spacing" type="dimen">1.2</item>
 
 </resources>

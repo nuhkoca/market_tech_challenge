@@ -27,13 +27,14 @@
       android:layout_height="wrap_content"
       android:layout_marginEnd="@dimen/spacing_normal"
       android:layout_marginStart="@dimen/spacing_normal"
-      android:text="@string/text_login"
+      android:fontFamily="@font/google_sans"
       android:textAppearance="@style/TextAppearance.Marketim.DialogContent"
       app:layout_constraintBottom_toBottomOf="@id/pbDialog"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@id/pbDialog"
       app:layout_constraintTop_toTopOf="@id/pbDialog"
       tools:targetApi="o"
+      tools:text="@string/text_login"
       />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

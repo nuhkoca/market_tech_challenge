@@ -25,7 +25,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
 
         btnLogin.setOnClickListener {
             hideKeyBoard()
-            showDialog()
+            showDialog(getString(R.string.text_login))
 
             val usernameDisposable = tietUsername.observeTextChanges()
             val passwordDisposable = tietPwd.observeTextChanges()
@@ -46,7 +46,9 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
                 showAlert(
                     title = getString(R.string.login_alert_dialog_title),
                     message = getString(R.string.login_alert_dialog_message),
-                    positiveButton = Pair(getString(R.string.login_alert_dialog_positive_button_text), {})
+                    positiveButton = Pair(
+                        getString(R.string.login_alert_dialog_positive_button_text),
+                        {})
                 )
             }
         }

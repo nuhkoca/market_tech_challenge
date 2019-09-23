@@ -36,7 +36,7 @@ class OrdersActivity : BaseActivity<OrdersViewModel>() {
                 message = getString(R.string.orders_logout_message),
                 positiveButton = Pair(getString(R.string.orders_logout_positive_button), {
                     viewModel.setRememberMe(false)
-                    showDialog()
+                    showDialog(getString(R.string.text_logout))
                 }),
                 negativeButton = Pair(getString(R.string.orders_logout_negative_button), {})
             )

@@ -13,11 +13,12 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:fontFamily="@font/google_sans"
       android:gravity="center"
-      android:text="@string/app_name"
+      android:text="@string/app_name_toolbar"
       android:textAllCaps="true"
       android:textColor="@android:color/white"
-      android:textSize="@dimen/font_big"
+      style="@style/TextAppearance.AppCompat.Medium"
       />
 
 </com.google.android.material.appbar.MaterialToolbar>

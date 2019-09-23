@@ -1,5 +1,7 @@
 <resources>
   <string name="app_name">core</string>
+  <string name="app_name_toolbar">Marketİm</string>
 
   <string name="text_login">Giriş Yapılıyor</string>
+  <string name="text_logout">Çıkış Yapılıyor</string>
 </resources>

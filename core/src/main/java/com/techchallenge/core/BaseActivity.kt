@@ -46,12 +46,12 @@ abstract class BaseActivity<VM : ViewModel> : DaggerAppCompatActivity(), BaseVie
 
     abstract override fun observeViewModel()
 
-    fun showDialog() {
+    fun showDialog(title: String) {
         if (supportFragmentManager.findFragmentByTag(ProgressDialogFragment.TAG) != null) {
             return
         }
 
-        val dialogFragment = ProgressDialogFragment()
+        val dialogFragment = ProgressDialogFragment.newInstance(title)
         dialogFragment.show(supportFragmentManager, ProgressDialogFragment.TAG)
     }
 
