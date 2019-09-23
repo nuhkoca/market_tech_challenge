@@ -25,7 +25,6 @@
         android:src="@drawable/ic_arrow_right"
         app:layout_constraintBottom_toBottomOf="@+id/tvMarketName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvMarketName"
         />
 
     <ImageView
@@ -39,7 +38,6 @@
         android:fontFamily="@font/google_sans"
         app:layout_constraintStart_toStartOf="@id/tvOrderName"
         app:layout_constraintTop_toBottomOf="@id/tvOrderName"
-        app:layout_constraintTop_toTopOf="@id/barrier"
         />
 
     <TextView
@@ -81,6 +79,7 @@
         android:paddingStart="@dimen/spacing_small"
         android:textSize="@dimen/font_normal"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/barrier"
         app:layout_constraintEnd_toStartOf="@+id/tvPrice"
         app:layout_constraintStart_toEndOf="@id/separator"
         app:layout_constraintTop_toTopOf="parent"
@@ -91,15 +90,16 @@
         android:id="@+id/tvOrderName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_tiny"
+        android:layout_marginTop="@dimen/spacing_small"
         android:ellipsize="end"
         android:fontFamily="@font/google_sans"
         android:maxLines="1"
         android:paddingEnd="@dimen/spacing_small"
         android:paddingStart="@dimen/spacing_small"
         android:textSize="@dimen/font_normal"
-        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintEnd_toStartOf="@id/tvPrice"
         app:layout_constraintStart_toStartOf="@id/tvMarketName"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
         tools:text="Şampuan 250 ml"
         />
 
@@ -108,21 +108,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_normal"
-        android:layout_marginTop="@dimen/spacing_small"
         android:fontFamily="@font/google_sans"
         android:textSize="@dimen/font_normal"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivExpandCollapseArrow"
         tools:text="25 TL"
         />
 
     <TextView
         android:id="@+id/tvMonth"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/google_sans"
+        android:gravity="center"
         android:paddingEnd="@dimen/spacing_small"
         android:paddingStart="@dimen/spacing_small"
         android:textSize="@dimen/font_normal"
@@ -149,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="tvOrderName,tvPrice"
+        app:constraint_referenced_ids="tvOrderName,tvMarketName"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
