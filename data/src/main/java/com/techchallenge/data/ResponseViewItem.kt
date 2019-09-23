@@ -11,4 +11,28 @@ data class ResponseViewItem(
     val productPrice: String,
     val productState: ProductState,
     val productDetailRawViewItem: ProductDetailRawViewItem
-) : AdapterItem
+) : AdapterItem {
+
+    private var isExpanded = false
+
+    fun setIsExpanded(isExpanded: Boolean) {
+        this.isExpanded = isExpanded
+    }
+
+    fun getIsExpanded() = isExpanded
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other?.javaClass != javaClass) return false
+
+        other as ResponseViewItem
+
+        if (marketName != other.marketName) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return marketName.hashCode()
+    }
+}

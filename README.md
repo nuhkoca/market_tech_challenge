@@ -60,7 +60,7 @@
 ### Layers
 * Data(This layer is responsible to hold models)
 * Domain(Retrieves data from data layer and dispatches to view layer. No connection with Android framework.)
-* Base(Contains common stuff for other layers)
+* Core(Contains common stuff for other layers)
 * View(Responsible for UI stuff such as displaying data)
 
 ### License

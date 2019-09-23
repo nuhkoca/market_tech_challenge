@@ -34,7 +34,6 @@ class OrdersAdapter : DelegateAdapter {
     inner class OrderViewHolder(itemView: View) :
         BaseViewHolder<ViewOrdersLayoutBinding, AdapterItem>(itemView) {
         override fun bindTo(item: AdapterItem) {
-            var up = false
             item as ResponseViewItem
             with(item) {
                 dataBinding?.use {
@@ -49,15 +48,15 @@ class OrdersAdapter : DelegateAdapter {
                     tvDetailPrice.text = productDetailRawViewItem.summaryPrice.withCurrency()
 
                     ivExpandCollapseArrow.setOnClickListener {
-                        up = up.not()
-                        it.rotate(up, onAnimationEnd = {
-                            layoutDetail.isVisible = up
+                        setIsExpanded(getIsExpanded().not())
+                        it.rotate(getIsExpanded(), onAnimationEnd = {
+                            layoutDetail.isVisible = getIsExpanded()
                         })
                     }
                     orderLayout.setOnClickListener {
-                        up = up.not()
-                        ivExpandCollapseArrow.rotate(up, onAnimationEnd = {
-                            layoutDetail.isVisible = up
+                        setIsExpanded(getIsExpanded().not())
+                        ivExpandCollapseArrow.rotate(getIsExpanded(), onAnimationEnd = {
+                            layoutDetail.isVisible = getIsExpanded()
                         })
                     }
                 }

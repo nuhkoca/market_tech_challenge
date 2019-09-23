@@ -1,13 +1,10 @@
 package com.techchallenge.core.util.ext
 
+import android.animation.Animator
+import android.animation.ObjectAnimator
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.Animation.RELATIVE_TO_SELF
 import android.view.animation.DecelerateInterpolator
-import android.view.animation.RotateAnimation
 
-const val DEFAULT_PIVOT_X = 0.5f
-const val DEFAULT_PIVOT_Y = 0.5f
 const val DEGREE_90 = 90.0f
 const val DEGREE_0 = 0.0f
 const val DEFAULT_DURATION = 200L
@@ -26,37 +23,38 @@ fun View.hide() {
     visibility = View.GONE
 }
 
+// This is replaced with RotateAnimation since ObjectAnimator saves its position in recycling.
 inline fun View.rotate(
     isClockWise: Boolean,
     crossinline onAnimationEnd: () -> Unit = {},
     crossinline onAnimationStart: () -> Unit = {}
 ) {
-    RotateAnimation(
+    ObjectAnimator.ofFloat(
+        this,
+        "rotation",
         if (isClockWise) DEGREE_0 else DEGREE_90,
-        if (isClockWise) DEGREE_90 else DEGREE_0,
-        RELATIVE_TO_SELF,
-        DEFAULT_PIVOT_X,
-        RELATIVE_TO_SELF,
-        DEFAULT_PIVOT_Y
+        if (isClockWise) DEGREE_90 else DEGREE_0
     ).apply {
+        duration = DEFAULT_DURATION
         interpolator = DecelerateInterpolator()
         repeatCount = 0
-        duration = DEFAULT_DURATION
-        fillAfter = true
-        setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationRepeat(p0: Animation?) {
+        addListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(p0: Animator?) {
                 // no-op
             }
 
-            override fun onAnimationEnd(p0: Animation?) {
+            override fun onAnimationEnd(p0: Animator?) {
                 onAnimationEnd.invoke()
             }
 
-            override fun onAnimationStart(p0: Animation?) {
+            override fun onAnimationCancel(p0: Animator?) {
+                // no-op
+            }
+
+            override fun onAnimationStart(p0: Animator?) {
                 onAnimationStart.invoke()
             }
         })
-        this@rotate.animation = this
         start()
     }
 }
