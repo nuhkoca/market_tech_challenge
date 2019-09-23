@@ -7,19 +7,16 @@ import com.techchallenge.core.local.BooleanPreference
 import com.techchallenge.core.local.LocalStorageModule
 import com.techchallenge.core.util.executors.Executors
 import com.techchallenge.core.util.ext.applySchedulers
-import com.techchallenge.core.util.validator.Validator
-import com.techchallenge.marketim.di.module.AppModule.Companion.PASSWORD
-import com.techchallenge.marketim.di.module.AppModule.Companion.USERNAME
+import com.techchallenge.domain.LoginValidateUseCase
+import com.techchallenge.domain.LoginValidateUseCase.LoginParams
 import com.techchallenge.marketim.vm.SingleLiveEvent
 import io.reactivex.Observable
-import io.reactivex.rxkotlin.Observables
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 import javax.inject.Named
 
 class LoginViewModel @Inject constructor(
-    @Named(USERNAME) private val usernameValidator: Validator<String>,
-    @Named(PASSWORD) private val passwordValidator: Validator<String>,
+    private val loginValidateUseCase: LoginValidateUseCase,
     @Named(LocalStorageModule.REMEMBER_ME_PREF) private val rememberMePref: BooleanPreference,
     override var executors: Executors
 ) : BaseViewModel(executors) {
@@ -31,12 +28,7 @@ class LoginViewModel @Inject constructor(
         usernameObservable: Observable<String>,
         passwordObservable: Observable<String>
     ) {
-        Observables.combineLatest(
-            usernameObservable,
-            passwordObservable
-        ) { username, password ->
-            usernameValidator.isValid(username) && passwordValidator.isValid(password)
-        }.distinctUntilChanged()
+        loginValidateUseCase.execute(LoginParams(usernameObservable, passwordObservable))
             .applySchedulers(executors)
             .subscribe(_formValidationLiveData::setValue) {
                 w { it.localizedMessage?.toString().toString() }

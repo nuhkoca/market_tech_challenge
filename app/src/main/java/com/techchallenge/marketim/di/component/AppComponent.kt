@@ -8,7 +8,6 @@ import com.techchallenge.data.DataModule
 import com.techchallenge.domain.DomainModule
 import com.techchallenge.marketim.MarketimApplication
 import com.techchallenge.marketim.di.module.ActivityBuilder
-import com.techchallenge.marketim.di.module.AppModule
 import com.techchallenge.marketim.di.module.ContextModule
 import com.techchallenge.marketim.vm.ViewModelModule
 import dagger.BindsInstance
@@ -24,7 +23,6 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         ActivityBuilder::class,
         ContextModule::class,
-        AppModule::class,
         CoreModule::class,
         DataModule::class,
         DomainModule::class,

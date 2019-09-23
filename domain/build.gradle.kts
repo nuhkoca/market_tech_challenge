@@ -115,6 +115,7 @@ dependencies {
     api(Dependencies.kotlin)
 
     api(Dependencies.rx_java)
+    implementation(Dependencies.rx_kotlin)
 
     api(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)

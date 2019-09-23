@@ -8,7 +8,6 @@
 
   <dimen name="font_small">14sp</dimen>
   <dimen name="font_normal">16sp</dimen>
-  <dimen name="font_big">24sp</dimen>
   <dimen name="font_huge">64sp</dimen>
 
   <dimen name="login_button_height">56dp</dimen>

@@ -11,6 +11,7 @@
 [![CircleCI](https://circleci.com/gh/nuhkoca/market_tech_challenge.svg?style=svg&circle-token=05700df6be888cf5df6833e16beb607127c1b7d5)](https://circleci.com/gh/nuhkoca/market_tech_challenge)
 [![Kotlin Version](https://img.shields.io/badge/kotlin-1.3.41-blue.svg)](https://kotlinlang.org)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![Repo Size](https://img.shields.io/github/repo-size/nuhkoca/market_tech_challenge)](https://github.com/nuhkoca/market_tech_challenge)
 
 #### About
 
