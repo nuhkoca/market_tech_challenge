@@ -52,6 +52,7 @@ android {
     testOptions {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
+        animationsDisabled = true
     }
 
     dataBinding {
@@ -129,4 +130,9 @@ dependencies {
     api(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)
     compileOnly(Dependencies.javax_annotation)
+
+    testImplementation(TestDependencies.arch_core)
+    testImplementation(TestDependencies.truth_ext)
+    testImplementation(TestDependencies.truth)
+    testImplementation(TestDependencies.mockito)
 }
