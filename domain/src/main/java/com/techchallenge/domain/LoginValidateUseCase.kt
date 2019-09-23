@@ -1,6 +1,7 @@
 package com.techchallenge.domain
 
-import com.techchallenge.core.CoreModule
+import com.techchallenge.core.CoreModule.Companion.PASSWORD
+import com.techchallenge.core.CoreModule.Companion.USERNAME
 import com.techchallenge.core.UseCase.ObservableUseCase
 import com.techchallenge.core.UseCase.Params
 import com.techchallenge.core.util.validator.Validator
@@ -11,8 +12,8 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class LoginValidateUseCase @Inject constructor(
-    @Named(CoreModule.USERNAME) private val usernameValidator: Validator<String>,
-    @Named(CoreModule.PASSWORD) private val passwordValidator: Validator<String>
+    @Named(USERNAME) private val usernameValidator: Validator<String>,
+    @Named(PASSWORD) private val passwordValidator: Validator<String>
 ) : ObservableUseCase<LoginParams, Boolean> {
 
     override fun execute(params: LoginParams): Observable<Boolean> {
