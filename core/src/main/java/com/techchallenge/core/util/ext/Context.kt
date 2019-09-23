@@ -9,6 +9,6 @@ import androidx.core.content.ContextCompat
 inline val Context.inflater: LayoutInflater
     get() = LayoutInflater.from(this)
 
-fun Context.getDrawableCompat(@DrawableRes resId: Int) : Drawable? {
+fun Context.getDrawableCompat(@DrawableRes resId: Int): Drawable? {
     return ContextCompat.getDrawable(this, resId)
 }

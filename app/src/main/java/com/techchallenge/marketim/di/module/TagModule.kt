@@ -11,6 +11,5 @@ object TagModule {
     @ActivityScope
     @Provides
     @JvmStatic
-    fun provideOrdersAdapter(
-    ): OrdersAdapter = OrdersAdapter()
+    fun provideOrdersAdapter(): OrdersAdapter = OrdersAdapter()
 }

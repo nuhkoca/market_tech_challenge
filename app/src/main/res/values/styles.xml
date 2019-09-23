@@ -20,8 +20,4 @@
     <item name="android:layout_marginTop">@dimen/spacing_large</item>
   </style>
 
-  <style name="TextAppearance.Toolbar" parent="TextAppearance.MaterialComponents.Caption">
-    <item name="android:gravity">center</item>
-  </style>
-
 </resources>

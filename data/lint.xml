@@ -24,4 +24,5 @@
   </issue>
   <issue id="Overdraw" severity="ignore" />
   <issue id="VectorPath" severity="ignore" />
+  <issue id="RtlEnabled" severity="ignore" />
 </lint>
