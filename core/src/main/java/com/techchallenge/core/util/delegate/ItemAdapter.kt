@@ -1,8 +1,8 @@
 package com.techchallenge.core.util.delegate
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.techchallenge.core.util.ext.smartBind
 import javax.inject.Inject
 
 class ItemAdapter @Inject constructor(private val delegateAdapterManager: DelegateAdapterManager) :
@@ -28,16 +28,5 @@ class ItemAdapter @Inject constructor(private val delegateAdapterManager: Delega
         )
     }
 
-    fun add(items: List<AdapterItem>) {
-        this.items.clear()
-        this.items.addAll(items)
-        notifyDataSetChanged()
-    }
-
-    fun update(newItems: List<AdapterItem>) {
-        val diff = DiffUtil.calculateDiff(AdapterItemDiffUtil(items, newItems))
-        items.clear()
-        items.addAll(newItems)
-        diff.dispatchUpdatesTo(this)
-    }
+    fun set(newItems: List<AdapterItem>) = smartBind(items, newItems)
 }

@@ -5,21 +5,19 @@ import androidx.lifecycle.MutableLiveData
 import com.github.ajalt.timberkt.w
 import com.techchallenge.core.BaseViewModel
 import com.techchallenge.core.UseCase.None
-import com.techchallenge.core.local.BooleanPreference
-import com.techchallenge.core.local.LocalStorageModule
 import com.techchallenge.core.util.executors.Executors
 import com.techchallenge.core.util.ext.applySchedulers
 import com.techchallenge.core.util.ext.progressify
 import com.techchallenge.data.ResponseViewItem
 import com.techchallenge.domain.GetOrdersUseCase
+import com.techchallenge.domain.LogoutUseCase
 import com.techchallenge.marketim.vm.ActionLiveData
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
-import javax.inject.Named
 
 class OrdersViewModel @Inject constructor(
     private val getOrdersUseCase: GetOrdersUseCase,
-    @Named(LocalStorageModule.REMEMBER_ME_PREF) private val rememberMePref: BooleanPreference,
+    private val logoutUseCase: LogoutUseCase,
     override var executors: Executors
 ) : BaseViewModel(executors) {
 
@@ -43,8 +41,12 @@ class OrdersViewModel @Inject constructor(
             .addTo(disposables)
     }
 
-    fun setRememberMe(isRemember: Boolean) {
-        rememberMePref.set(isRemember)
-        _logoutLiveData.call()
+    fun logout() {
+        logoutUseCase.execute()
+            .applySchedulers(executors)
+            .subscribe({
+                _logoutLiveData.call()
+            }, { w { "Cannot logout at the moment" } })
+            .addTo(disposables)
     }
 }

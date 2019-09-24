@@ -18,7 +18,7 @@ interface UseCase {
 
     interface CompletableUseCase<params : Params> :
         UseCase {
-        fun execute(params: params): Completable
+        fun execute(params: params? = null): Completable
     }
 
     interface SingleUseCase<params : Params, T : Any> :

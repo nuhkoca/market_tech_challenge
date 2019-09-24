@@ -20,8 +20,6 @@ class OrdersActivity : BaseActivity<OrdersViewModel>() {
     @Inject
     lateinit var itemAdapter: ItemAdapter
 
-    private var shouldUpdate = false
-
     override val layoutId = R.layout.activity_orders
 
     override fun getViewModelClass() = OrdersViewModel::class.java
@@ -35,26 +33,17 @@ class OrdersActivity : BaseActivity<OrdersViewModel>() {
                 title = getString(R.string.orders_logout_title),
                 message = getString(R.string.orders_logout_message),
                 positiveButton = Pair(getString(R.string.orders_logout_positive_button), {
-                    viewModel.setRememberMe(false)
+                    viewModel.logout()
                     showDialog(getString(R.string.text_logout))
                 }),
                 negativeButton = Pair(getString(R.string.orders_logout_negative_button), {})
             )
         }
-        btnOrders.setOnClickListener {
-            viewModel.getOrders()
-        }
+        btnOrders.setOnClickListener { viewModel.getOrders() }
     }
 
     override fun observeViewModel() = with(viewModel) {
-        ordersLiveData.observeWith(this@OrdersActivity) {
-            if (shouldUpdate.not()) {
-                itemAdapter.add(it)
-                shouldUpdate = true
-            } else {
-                itemAdapter.update(it)
-            }
-        }
+        ordersLiveData.observeWith(this@OrdersActivity, itemAdapter::set)
         logoutLiveData.observeWith(this@OrdersActivity) {
             hideDialog()
             launchActivity<LoginActivity>()
