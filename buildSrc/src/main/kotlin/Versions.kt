@@ -19,7 +19,7 @@ object Versions {
     const val rx_binding = "3.0.0"
 
     // Retrofit
-    const val retrofit = "2.6.1"
+    const val retrofit = "2.6.2"
     const val okhttp = "4.2.0"
 
     // Lifecycle
