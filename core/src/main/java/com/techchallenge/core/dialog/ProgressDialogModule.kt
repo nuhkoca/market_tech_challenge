@@ -1,6 +1,6 @@
 package com.techchallenge.core.dialog
 
-import com.techchallenge.core.FragmentScope
+import com.techchallenge.core.scope.FragmentScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

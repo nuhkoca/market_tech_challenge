@@ -14,6 +14,7 @@ object SharedPreferencesModule {
 
     @Provides
     @Singleton
+    @MarketPreference
     @JvmStatic
     fun provideMarketimPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(MARKETIM_SHARED_PREFERENCES, MODE_PRIVATE)

@@ -4,5 +4,6 @@
   <style name="Widget.Marketim.TextView" parent="@android:style/Widget.Material.TextView">
     <item name="android:textAppearance">@style/TextAppearance.Marketim.Body</item>
     <item name="android:lineSpacingMultiplier">@dimen/text_line_spacing</item>
+    <item name="android:fontFamily">@font/google_sans</item>
   </style>
 </resources>

@@ -1,6 +1,8 @@
 package com.techchallenge.core.local
 
 import android.content.SharedPreferences
+import com.techchallenge.core.util.ext.putBoolean
+import com.techchallenge.core.util.ext.remove
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -18,11 +20,11 @@ class BooleanPreference @JvmOverloads constructor(
         get() = preferences.contains(key)
 
     fun set(value: Boolean) {
-        preferences.edit().putBoolean(key, value).apply()
+        preferences.putBoolean(key, value)
     }
 
     fun delete() {
-        preferences.edit().remove(key).apply()
+        preferences.remove(key)
     }
 
     override fun getValue(thisRef: Any, property: KProperty<*>) = get()

@@ -18,6 +18,7 @@
     <item name="android:textAllCaps">true</item>
     <item name="android:textColor">@color/colorPrimary</item>
     <item name="android:layout_marginTop">@dimen/spacing_large</item>
+    <item name="fontFamily">@font/google_sans</item>
   </style>
 
 </resources>

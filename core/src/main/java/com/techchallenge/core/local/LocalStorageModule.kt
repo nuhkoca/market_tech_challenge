@@ -15,7 +15,7 @@ object LocalStorageModule {
     @Singleton
     @Named(REMEMBER_ME_PREF)
     @JvmStatic
-    fun provideRememberMePref(sharedPreferences: SharedPreferences): BooleanPreference {
+    fun provideRememberMePref(@MarketPreference sharedPreferences: SharedPreferences): BooleanPreference {
         return BooleanPreference(sharedPreferences, REMEMBER_ME_PREF, defaultValue = false)
     }
 }

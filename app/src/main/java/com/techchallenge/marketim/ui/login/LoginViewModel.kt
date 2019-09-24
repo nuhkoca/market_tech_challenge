@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.github.ajalt.timberkt.w
 import com.techchallenge.core.BaseViewModel
 import com.techchallenge.core.local.BooleanPreference
-import com.techchallenge.core.local.LocalStorageModule
+import com.techchallenge.core.local.LocalStorageModule.REMEMBER_ME_PREF
 import com.techchallenge.core.util.executors.Executors
 import com.techchallenge.core.util.ext.applySchedulers
 import com.techchallenge.domain.LoginValidateUseCase
@@ -17,7 +17,7 @@ import javax.inject.Named
 
 class LoginViewModel @Inject constructor(
     private val loginValidateUseCase: LoginValidateUseCase,
-    @Named(LocalStorageModule.REMEMBER_ME_PREF) private val rememberMePref: BooleanPreference,
+    @Named(REMEMBER_ME_PREF) private val rememberMePref: BooleanPreference,
     override var executors: Executors
 ) : BaseViewModel(executors) {
 
