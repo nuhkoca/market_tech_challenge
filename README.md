@@ -15,6 +15,8 @@
 
 #### About
 
+**Please note; the new OkHttp and Retrofit versions don't support API 21 and lower so that crashes might happen.**
+
 >The app is fed by Kariyer.net.
 
 >Sensitive Data is secured by the power of NDK.
