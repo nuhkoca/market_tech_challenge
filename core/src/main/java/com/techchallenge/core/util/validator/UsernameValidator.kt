@@ -6,5 +6,5 @@ import javax.inject.Inject
 class UsernameValidator @Inject constructor() : Validator<String> {
 
     override fun isValid(input: String) =
-        input.isNotEmpty() && input == SensitiveData.username()
+        input.trimEnd().isNotEmpty() && input.trimEnd() == SensitiveData.username()
 }
