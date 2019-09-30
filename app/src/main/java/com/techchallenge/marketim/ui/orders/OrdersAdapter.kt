@@ -43,8 +43,8 @@ class OrdersAdapter : DelegateAdapter {
                     tvPrice.text = productPrice
                     tvStatusText.text = productState.type
                     ivStatus.setDrawable(productState.color)
-                    tvDetail.text = productDetailRawViewItem.orderDetail
-                    tvDetailPrice.text = productDetailRawViewItem.summaryPrice
+                    tvDetail.text = productDetailViewItem.orderDetail
+                    tvDetailPrice.text = productDetailViewItem.summaryPrice
 
                     ivExpandCollapseArrow.setOnClickListener {
                         setIsExpanded(getIsExpanded().not())

@@ -2,7 +2,7 @@ package com.techchallenge.data
 
 import com.google.gson.annotations.SerializedName
 
-data class ProductDetailRawViewItem(
+data class ProductDetailViewItem(
 
     @SerializedName("orderDetail")
     val orderDetail: String,

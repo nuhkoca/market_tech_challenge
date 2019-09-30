@@ -10,7 +10,7 @@ data class ResponseViewItem(
     val orderName: String,
     val productPrice: String,
     val productState: ProductState,
-    val productDetailRawViewItem: ProductDetailRawViewItem
+    val productDetailViewItem: ProductDetailViewItem
 ) : AdapterItem {
 
     private var isExpanded = false
