@@ -23,7 +23,7 @@ fun View.hide() {
     visibility = View.GONE
 }
 
-// This is replaced with RotateAnimation since ObjectAnimator saves its position in recycling.
+// This is replaced with ObjectAnimator since ObjectAnimator saves its position in recycling.
 inline fun View.rotate(
     isClockWise: Boolean,
     crossinline onAnimationEnd: () -> Unit = {},
