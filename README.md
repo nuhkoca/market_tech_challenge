@@ -1,3 +1,4 @@
+## Domain is disabled for this project.
 # Marketim
 
 <p align="center"><img src="https://github.com/nuhkoca/market_tech_challenge/blob/master/app/src/main/ic_launcher-web.png" alt="Marketim" height="200px"></p>

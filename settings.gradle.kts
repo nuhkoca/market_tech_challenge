@@ -1,9 +1,7 @@
-include(Modules.app)
+include(":app")
+include(":core")
+include(":data")
+include(":domain")
 
-include(Modules.core)
-
-include(Modules.data)
-
-include(Modules.domain)
-
-rootProject.name = Config.project_name
+rootProject.name = "Marketim"
+rootProject.buildFileName = "build.gradle.kts"

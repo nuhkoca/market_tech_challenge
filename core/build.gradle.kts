@@ -22,7 +22,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            setPath("CMakeLists.txt")
+            path("CMakeLists.txt")
         }
     }
 
@@ -73,7 +73,7 @@ android {
         isWarningsAsErrors = true
         isCheckDependencies = true
         isIgnoreTestSources = true
-        setLintConfig(file("lint.xml"))
+        lintConfig = file("lint.xml")
         disable("GradleDeprecated")
         disable("OldTargetApi")
         disable("GradleDependency")

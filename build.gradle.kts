@@ -7,8 +7,9 @@ import io.gitlab.arturbosch.detekt.detekt
 buildscript {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        gradlePluginPortal()
+        jcenter()
     }
     dependencies {
         classpath(Classpaths.gradle_plugin)
@@ -19,14 +20,15 @@ buildscript {
 plugins {
     id("io.gitlab.arturbosch.detekt") version Versions.detekt
     id("com.github.ben-manes.versions") version Versions.ben_manes
-    id("org.jlleitschuh.gradle.ktlint-idea") version Versions.ktlint
+    id("org.jlleitschuh.gradle.ktlint") version Versions.ktlint
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        gradlePluginPortal()
+        jcenter()
         maven { setUrl("https://mapbox.bintray.com/mapbox") }
     }
 }

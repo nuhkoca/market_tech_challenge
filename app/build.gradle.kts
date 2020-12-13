@@ -18,6 +18,7 @@ android {
         versionCode = 1
         versionName = getSemanticAppVersionName()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -67,7 +68,7 @@ android {
         isWarningsAsErrors = true
         isCheckDependencies = true
         isIgnoreTestSources = true
-        setLintConfig(file("lint.xml"))
+        lintConfig = file("lint.xml")
         disable("GradleDeprecated")
         disable("OldTargetApi")
         disable("GradleDependency")
