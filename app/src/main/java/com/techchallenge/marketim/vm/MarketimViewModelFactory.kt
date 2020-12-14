@@ -15,7 +15,7 @@ class MarketimViewModelFactory @Inject constructor(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         val result: Provider<out ViewModel>? = creators[modelClass] ?: creators.entries
             .firstOrNull { modelClass.isAssignableFrom(it.key) }?.value
-        ?: throw IllegalArgumentException("$UNKNOWN_MODEL_EXCEPTION $modelClass")
+            ?: throw IllegalArgumentException("$UNKNOWN_MODEL_EXCEPTION $modelClass")
 
         return result?.get() as? T ?: throw RuntimeException(EXCEPTION_MESSAGE)
     }

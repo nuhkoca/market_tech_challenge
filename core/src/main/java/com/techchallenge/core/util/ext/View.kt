@@ -38,23 +38,25 @@ inline fun View.rotate(
         duration = DEFAULT_DURATION
         interpolator = DecelerateInterpolator()
         repeatCount = 0
-        addListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(p0: Animator?) {
-                // no-op
-            }
+        addListener(
+            object : Animator.AnimatorListener {
+                override fun onAnimationRepeat(p0: Animator?) {
+                    // no-op
+                }
 
-            override fun onAnimationEnd(p0: Animator?) {
-                onAnimationEnd.invoke()
-            }
+                override fun onAnimationEnd(p0: Animator?) {
+                    onAnimationEnd.invoke()
+                }
 
-            override fun onAnimationCancel(p0: Animator?) {
-                // no-op
-            }
+                override fun onAnimationCancel(p0: Animator?) {
+                    // no-op
+                }
 
-            override fun onAnimationStart(p0: Animator?) {
-                onAnimationStart.invoke()
+                override fun onAnimationStart(p0: Animator?) {
+                    onAnimationStart.invoke()
+                }
             }
-        })
+        )
         start()
     }
 }

@@ -44,9 +44,12 @@ class OrdersViewModel @Inject constructor(
     fun logout() {
         logoutUseCase.execute()
             .applySchedulers(executors)
-            .subscribe({
-                _logoutLiveData.call()
-            }, { w { "Cannot logout at the moment" } })
+            .subscribe(
+                {
+                    _logoutLiveData.call()
+                },
+                { w { "Cannot logout at the moment" } }
+            )
             .addTo(disposables)
     }
 }

@@ -48,15 +48,21 @@ class OrdersAdapter : DelegateAdapter {
 
                     ivExpandCollapseArrow.setOnClickListener {
                         setIsExpanded(getIsExpanded().not())
-                        it.rotate(getIsExpanded(), onAnimationEnd = {
-                            layoutDetail.isVisible = getIsExpanded()
-                        })
+                        it.rotate(
+                            getIsExpanded(),
+                            onAnimationEnd = {
+                                layoutDetail.isVisible = getIsExpanded()
+                            }
+                        )
                     }
                     orderLayout.setOnClickListener {
                         setIsExpanded(getIsExpanded().not())
-                        ivExpandCollapseArrow.rotate(getIsExpanded(), onAnimationEnd = {
-                            layoutDetail.isVisible = getIsExpanded()
-                        })
+                        ivExpandCollapseArrow.rotate(
+                            getIsExpanded(),
+                            onAnimationEnd = {
+                                layoutDetail.isVisible = getIsExpanded()
+                            }
+                        )
                     }
                 }
             }

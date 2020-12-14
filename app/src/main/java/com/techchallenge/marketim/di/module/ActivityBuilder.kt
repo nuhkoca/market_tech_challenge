@@ -14,7 +14,8 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(
         modules = [
-            OrdersModule::class, TagModule::class, ProgressDialogModule::class]
+            OrdersModule::class, TagModule::class, ProgressDialogModule::class
+        ]
     )
     @ActivityScope
     abstract fun provideOrdersActivity(): OrdersActivity

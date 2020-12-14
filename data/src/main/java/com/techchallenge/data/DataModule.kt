@@ -25,12 +25,12 @@ abstract class DataModule {
     @Binds
     @Remote
     abstract fun provideRemoteDataSource(marketimRemoteDataSource: MarketimRemoteDataSource):
-            DataSource
+        DataSource
 
     @Binds
     @Local
     abstract fun provideLocalDataSource(marketimLocalDataSource: MarketimLocalDataSource):
-            DataSource
+        DataSource
 
     @Module
     object StaticDataModule {

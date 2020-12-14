@@ -21,27 +21,27 @@ abstract class CoreModule {
 
     @Binds
     internal abstract fun provideExecutionThread(executionThread: MarketimExecutionThread):
-            ExecutionThread
+        ExecutionThread
 
     @Binds
     internal abstract fun providePostExecutionThread(postExecutionThread: MarketimPostExecutionThread):
-            PostExecutionThread
+        PostExecutionThread
 
     @Binds
     internal abstract fun provideComputationThread(computationThread: MarketimComputationThread):
-            ComputationThread
+        ComputationThread
 
     @Binds
     @Singleton
     @Named(USERNAME)
     internal abstract fun provideUsernameValidator(usernameValidator: UsernameValidator):
-            Validator<String>
+        Validator<String>
 
     @Binds
     @Singleton
     @Named(PASSWORD)
     internal abstract fun providePasswordValidator(passwordValidator: PasswordValidator):
-            Validator<String>
+        Validator<String>
 
     @Binds
     @Singleton

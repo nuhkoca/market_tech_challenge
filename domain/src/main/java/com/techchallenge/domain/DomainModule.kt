@@ -8,9 +8,9 @@ abstract class DomainModule {
 
     @Binds
     abstract fun provideMarketimRepository(marketimRepositoryImpl: MarketimRepositoryImpl):
-            MarketimRepository
+        MarketimRepository
 
     @Binds
     abstract fun provideLogoutRepository(logoutRepositoryImpl: LogoutRepositoryImpl):
-            LogoutRepository
+        LogoutRepository
 }

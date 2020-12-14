@@ -8,13 +8,15 @@ import dagger.Binds
 import dagger.Module
 
 @Module(
-    includes = [OrdersViewModelModule::class,
+    includes = [
+        OrdersViewModelModule::class,
         LoginViewModelModule::class,
-        SplashViewModelModule::class]
+        SplashViewModelModule::class
+    ]
 )
 abstract class ViewModelModule {
 
     @Binds
     internal abstract fun bindsMarketimViewModelFactory(viewModelFactory: MarketimViewModelFactory):
-            ViewModelProvider.Factory
+        ViewModelProvider.Factory
 }

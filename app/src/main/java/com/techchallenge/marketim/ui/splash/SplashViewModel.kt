@@ -29,11 +29,14 @@ class SplashViewModel @Inject constructor(
         Observable.timer(DEFAULT_DELAY, MILLISECONDS, executors.computation)
             .observeOn(executors.ui)
             .flatMap { Observable.fromCallable { rememberMePref.get() } }
-            .subscribe({
-                _rememberMeLiveData.value = rememberMePref.get()
-            }, {
-                w { it.localizedMessage?.toString().toString() }
-            })
+            .subscribe(
+                {
+                    _rememberMeLiveData.value = rememberMePref.get()
+                },
+                {
+                    w { it.localizedMessage?.toString().toString() }
+                }
+            )
             .addTo(disposables)
     }
 

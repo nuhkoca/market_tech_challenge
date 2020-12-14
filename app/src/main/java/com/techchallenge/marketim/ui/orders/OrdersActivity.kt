@@ -32,10 +32,13 @@ class OrdersActivity : BaseActivity<OrdersViewModel>() {
             showAlert(
                 title = getString(R.string.orders_logout_title),
                 message = getString(R.string.orders_logout_message),
-                positiveButton = Pair(getString(R.string.orders_logout_positive_button), {
-                    viewModel.logout()
-                    showDialog(getString(R.string.text_logout))
-                }),
+                positiveButton = Pair(
+                    getString(R.string.orders_logout_positive_button),
+                    {
+                        viewModel.logout()
+                        showDialog(getString(R.string.text_logout))
+                    }
+                ),
                 negativeButton = Pair(getString(R.string.orders_logout_negative_button), {})
             )
         }

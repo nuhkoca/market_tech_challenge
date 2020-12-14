@@ -19,7 +19,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [AndroidSupportInjectionModule::class,
+    modules = [
+        AndroidSupportInjectionModule::class,
         AndroidInjectionModule::class,
         ActivityBuilder::class,
         ContextModule::class,
@@ -28,7 +29,8 @@ import javax.inject.Singleton
         DomainModule::class,
         ViewModelModule::class,
         SharedPreferencesModule::class,
-        LocalStorageModule::class]
+        LocalStorageModule::class
+    ]
 )
 interface AppComponent : AndroidInjector<MarketimApplication> {
 
