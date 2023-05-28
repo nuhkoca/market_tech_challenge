@@ -8,7 +8,7 @@ object Versions {
     const val kotlin_gradle_plugin = "1.4.21"
 
     // UI
-    const val appcompat = "1.2.0"
+    const val appcompat = "1.6.1"
     const val material = "1.2.1"
     const val constraint_layout = "2.0.4"
 
