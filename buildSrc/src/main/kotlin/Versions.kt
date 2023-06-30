@@ -36,7 +36,7 @@ object Versions {
     const val abp = "1.4.6"
 
     // LeakCanary
-    const val leakcanary = "2.11"
+    const val leakcanary = "2.12"
 
     // Static code analysis
     const val detekt = "1.23.0"
