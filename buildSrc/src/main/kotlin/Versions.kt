@@ -40,7 +40,7 @@ object Versions {
 
     // Static code analysis
     const val detekt = "1.23.1"
-    const val ben_manes = "0.47.0"
+    const val ben_manes = "0.48.0"
     const val ktlint = "11.5.1"
 
     // Testing
