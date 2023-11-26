@@ -39,7 +39,7 @@ object Versions {
     const val leakcanary = "2.12"
 
     // Static code analysis
-    const val detekt = "1.23.3"
+    const val detekt = "1.23.4"
     const val ben_manes = "0.50.0"
     const val ktlint = "11.6.1"
 
