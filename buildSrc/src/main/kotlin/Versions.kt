@@ -23,7 +23,7 @@ object Versions {
     const val okhttp = "4.12.0"
 
     // Lifecycle
-    const val lifecycle = "2.7.0"
+    const val lifecycle = "2.8.0"
 
     // DI
     const val dagger = "2.51.1"
