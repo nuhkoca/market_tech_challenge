@@ -5,7 +5,7 @@ object Versions {
 
     // Gradle plugins
     const val gradle_plugin = "8.7.0"
-    const val kotlin_gradle_plugin = "2.0.20"
+    const val kotlin_gradle_plugin = "2.0.21"
 
     // UI
     const val appcompat = "1.7.0"
