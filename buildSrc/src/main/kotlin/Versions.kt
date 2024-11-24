@@ -4,7 +4,7 @@ object Versions {
     const val android_annotation = "1.9.1"
 
     // Gradle plugins
-    const val gradle_plugin = "8.7.1"
+    const val gradle_plugin = "8.7.2"
     const val kotlin_gradle_plugin = "2.0.21"
 
     // UI
