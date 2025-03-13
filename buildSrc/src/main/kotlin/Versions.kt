@@ -33,7 +33,7 @@ object Versions {
     const val timberkt = "1.5.1"
 
     // ABP
-    const val abp = "1.4.8"
+    const val abp = "1.4.9"
 
     // LeakCanary
     const val leakcanary = "2.14"
