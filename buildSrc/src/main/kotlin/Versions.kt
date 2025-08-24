@@ -26,7 +26,7 @@ object Versions {
     const val lifecycle = "2.9.2"
 
     // DI
-    const val dagger = "2.56.2"
+    const val dagger = "2.57.1"
     const val javax = "10.0-b28"
 
     // Timber
