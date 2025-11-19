@@ -20,7 +20,7 @@ object Versions {
 
     // Retrofit
     const val retrofit = "3.0.0"
-    const val okhttp = "5.3.1"
+    const val okhttp = "5.3.2"
 
     // Lifecycle
     const val lifecycle = "2.9.4"
