@@ -1,6 +1,6 @@
 object Versions {
     // Kotlin
-    const val core_ktx = "1.18.0"
+    const val core_ktx = "1.19.0"
     const val android_annotation = "1.10.0"
 
     // Gradle plugins
